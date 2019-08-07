@@ -1,0 +1,152 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
+
+namespace Agile_Assignment_3
+{
+    public partial class PageResultContainer : Form
+    {
+        RoundResultPage HeadPage;
+<<<<<<< HEAD
+        ResultSummaryPage SummaryPage;
+        BallotPapersHandler BPHandler;
+=======
+        BallotPapersHandler BPHandler;
+        public List<AVote> roundVoteResult;
+        Bitmap bmp;
+
+>>>>>>> 9b491009e94c0dfe20235a615c698123ce18da69
+        public PageResultContainer(List<string> Candidates, List<AVote> Ballots)
+        {
+            InitializeComponent();
+            roundVoteResult = new List<AVote>();
+            this.BPHandler = new BallotPapersHandler(Candidates, Ballots);
+            this.SetupSummaryPage();
+            this.SetupResultPages();
+            this.ClientSize = new Size(this.HeadPage.Width + 4, this.HeadPage.Height + this.MenuStrip.Height + 4);
+            this.MaximumSize = this.Size;
+            this.MinimumSize = this.Size;
+            this.HeadPage.Show();
+        }
+
+        private void SetupResultPages()
+        {
+            RoundResultPage PreviousPage = null, Iterator;
+            this.HeadPage = new RoundResultPage(this.BPHandler.GetResultsForEachRound()[0],
+                                this.BPHandler.GetRoundsValidBallots()[0],
+                                this.BPHandler.GetInvalidBallotCount(),
+                                this.BPHandler.GetRoundsExhaustedBallots()[0],
+                                this.BPHandler.GetTotalBallotCount(),
+                                this.BPHandler.GetRoundsMajorities()[0], 1,this.roundVoteResult);
+            Iterator = this.HeadPage;
+            this.HeadPage.MdiParent = this;
+            for(int i = 1; i < this.BPHandler.GetResultsForEachRound().Count; i++)
+            {
+                PreviousPage = Iterator;
+                Iterator = new RoundResultPage(this.BPHandler.GetResultsForEachRound()[i],
+                                this.BPHandler.GetRoundsValidBallots()[i],
+                                this.BPHandler.GetInvalidBallotCount(),
+                                this.BPHandler.GetRoundsExhaustedBallots()[i],
+                                this.BPHandler.GetTotalBallotCount(),
+                                this.BPHandler.GetRoundsMajorities()[i], i + 1,this.roundVoteResult);
+                Iterator.SetPreviousPage(PreviousPage);
+                if (PreviousPage != null)
+                    PreviousPage.SetNextPage(Iterator);
+                Iterator.Top = 0;
+                Iterator.Left = 0;
+                Iterator.MdiParent = this;
+            }
+<<<<<<< HEAD
+        }
+
+        private void SetupSummaryPage()
+        {
+            this.SummaryPage = new ResultSummaryPage(this.BPHandler.GetResultsForEachRound(),
+                                                        this.BPHandler.GetRoundsValidBallots(),
+                                                        this.BPHandler.GetInvalidBallotCount(),
+                                                        this.BPHandler.GetRoundsExhaustedBallots(),
+                                                        this.BPHandler.GetTotalBallotCount(),
+                                                        this.BPHandler.GetRoundsMajorities());
+            this.SummaryPage.MdiParent = this;
+            this.Top = 0;
+            this.Left = 0;
+        }
+
+        private void RoundViews_Click(object sender, EventArgs e)
+        {
+            this.HeadPage.Show();
+            this.SummaryPage.Hide();
+        }
+
+        private void SummaryView_Click(object sender, EventArgs e)
+        {
+            this.SummaryPage.Show();
+            this.HeadPage.Hide();
+        }
+=======
+        }
+
+        private void PrintAsPDF_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exportAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String filename = "Default.csv";    //Default file excel.
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "CSV File (*.csv)|*.csv|All File | *.*";
+            //Change a bit to solve an errors
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                filename = dialog.FileName;     //get path name file name.
+                StringBuilder csv = new StringBuilder();
+                csv.AppendLine("Round,"+this.roundVoteResult[0].showAllCandidate());    //Append the title for the .csv file.
+                for (int i = 0; i < this.roundVoteResult.Count; i++)
+                {
+                    csv.AppendLine(i+1+ ","+this.roundVoteResult[i].showAllVoteForCandidate());
+                }
+                //csv.Append(this.roundVoteResult.vote[0].showAllCandidate()+"");
+                String csvPath = filename + ".csv";
+                System.IO.File.Delete(csvPath);
+                File.AppendAllText(csvPath, csv.ToString());
+            }
+        }
+
+
+        private void PrinterPrint_Click(object sender, EventArgs e)
+        {
+            RoundResultPage currentPage = this.HeadPage;
+            while (currentPage != null)
+            {
+                currentPage.Show();
+                Graphics g = currentPage.CreateGraphics();
+                bmp = new Bitmap(this.Size.Width, this.Size.Height, g);
+                Graphics mg = Graphics.FromImage(bmp);
+                mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
+                printPreviewDialog1.ShowDialog();
+                currentPage = currentPage.NextPage;
+            }
+        }
+
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bmp, 0, 0);
+        }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> 9b491009e94c0dfe20235a615c698123ce18da69
+    }
+}

@@ -1,0 +1,221 @@
+﻿namespace Agile_Assignment_3
+{
+    partial class PageResultContainer
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+<<<<<<< HEAD
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
+            this.Print = new System.Windows.Forms.ToolStripMenuItem();
+            this.PrintAsPDF = new System.Windows.Forms.ToolStripMenuItem();
+            this.PrinterPrint = new System.Windows.Forms.ToolStripMenuItem();
+            this.ResultViews = new System.Windows.Forms.ToolStripMenuItem();
+            this.RoundViews = new System.Windows.Forms.ToolStripMenuItem();
+            this.SummaryView = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStrip.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // MenuStrip
+            // 
+            this.MenuStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Print,
+            this.ResultViews});
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Padding = new System.Windows.Forms.Padding(0);
+            this.MenuStrip.Size = new System.Drawing.Size(284, 24);
+            this.MenuStrip.TabIndex = 1;
+            this.MenuStrip.Text = "menuStrip1";
+            // 
+            // Print
+            // 
+            this.Print.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.PrintAsPDF,
+            this.PrinterPrint});
+            this.Print.Name = "Print";
+            this.Print.Size = new System.Drawing.Size(44, 24);
+            this.Print.Text = "Print";
+            // 
+            // PrintAsPDF
+            // 
+            this.PrintAsPDF.Name = "PrintAsPDF";
+            this.PrintAsPDF.Size = new System.Drawing.Size(152, 22);
+            this.PrintAsPDF.Text = "Print As PDF";
+            // 
+            // PrinterPrint
+            // 
+            this.PrinterPrint.Name = "PrinterPrint";
+            this.PrinterPrint.Size = new System.Drawing.Size(152, 22);
+            this.PrinterPrint.Text = "Print";
+            // 
+            // ResultViews
+            // 
+            this.ResultViews.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.RoundViews,
+            this.SummaryView});
+            this.ResultViews.Name = "ResultViews";
+            this.ResultViews.Size = new System.Drawing.Size(84, 24);
+            this.ResultViews.Text = "Result Views";
+            // 
+            // RoundViews
+            // 
+            this.RoundViews.Name = "RoundViews";
+            this.RoundViews.Size = new System.Drawing.Size(153, 22);
+            this.RoundViews.Text = "Round Views";
+            this.RoundViews.Click += new System.EventHandler(this.RoundViews_Click);
+            // 
+            // SummaryView
+            // 
+            this.SummaryView.Name = "SummaryView";
+            this.SummaryView.Size = new System.Drawing.Size(153, 22);
+            this.SummaryView.Text = "Summary View";
+            this.SummaryView.Click += new System.EventHandler(this.SummaryView_Click);
+            // 
+            // PageResultContainer
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.MenuStrip);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.MenuStrip;
+            this.Name = "PageResultContainer";
+            this.Text = "Voting Results";
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+=======
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageResultContainer));
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
+            this.Print = new System.Windows.Forms.ToolStripMenuItem();
+            this.PrintAsPDF = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PrinterPrint = new System.Windows.Forms.ToolStripMenuItem();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.MenuStrip.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // MenuStrip
+            // 
+            this.MenuStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Print});
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Padding = new System.Windows.Forms.Padding(0);
+            this.MenuStrip.Size = new System.Drawing.Size(284, 24);
+            this.MenuStrip.TabIndex = 1;
+            this.MenuStrip.Text = "menuStrip1";
+            // 
+            // Print
+            // 
+            this.Print.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.PrintAsPDF,
+            this.PrinterPrint,
+            this.exportAsToolStripMenuItem});
+            this.Print.Name = "Print";
+            this.Print.Size = new System.Drawing.Size(44, 24);
+            this.Print.Text = "Print";
+            // 
+            // PrintAsPDF
+            // 
+            this.PrintAsPDF.Name = "PrintAsPDF";
+            this.PrintAsPDF.Size = new System.Drawing.Size(152, 22);
+            this.PrintAsPDF.Text = "Print As PDF";
+            this.PrintAsPDF.Click += new System.EventHandler(this.PrintAsPDF_Click);
+            // 
+            // exportAsToolStripMenuItem
+            // 
+            this.exportAsToolStripMenuItem.Name = "exportAsToolStripMenuItem";
+            this.exportAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportAsToolStripMenuItem.Text = "Export";
+            this.exportAsToolStripMenuItem.Click += new System.EventHandler(this.exportAsToolStripMenuItem_Click);
+            // 
+            // PrinterPrint
+            // 
+            this.PrinterPrint.Name = "PrinterPrint";
+            this.PrinterPrint.Size = new System.Drawing.Size(152, 22);
+            this.PrinterPrint.Text = "Print";
+            this.PrinterPrint.Click += new System.EventHandler(this.PrinterPrint_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            this.printPreviewDialog1.Load += new System.EventHandler(this.printPreviewDialog1_Load);
+            // 
+            // PageResultContainer
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.MenuStrip);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.MenuStrip;
+            this.Name = "PageResultContainer";
+            this.Text = "Voting Results";
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+>>>>>>> 9b491009e94c0dfe20235a615c698123ce18da69
+        }
+
+        #endregion
+
+        private System.Windows.Forms.MenuStrip MenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem Print;
+<<<<<<< HEAD
+        private System.Windows.Forms.ToolStripMenuItem PrintAsPDF;
+        private System.Windows.Forms.ToolStripMenuItem PrinterPrint;
+        private System.Windows.Forms.ToolStripMenuItem ResultViews;
+        private System.Windows.Forms.ToolStripMenuItem RoundViews;
+        private System.Windows.Forms.ToolStripMenuItem SummaryView;
+=======
+        private System.Windows.Forms.ToolStripMenuItem PrintAsPDF;
+        private System.Windows.Forms.ToolStripMenuItem PrinterPrint;
+        private System.Windows.Forms.ToolStripMenuItem exportAsToolStripMenuItem;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+>>>>>>> 9b491009e94c0dfe20235a615c698123ce18da69
+    }
+}

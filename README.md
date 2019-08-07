@@ -1,2 +1,0 @@
-# Voting System
- AustraliaVotingSystem- C#
